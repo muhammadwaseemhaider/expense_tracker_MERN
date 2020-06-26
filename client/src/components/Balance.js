@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { TransactionContext } from '../TransactionState';
+import {numberWithCommas} from '../utils/format';
 
 export const Balance = () => {
 
@@ -10,7 +11,7 @@ export const Balance = () => {
   return (
     <div>
         <h4>Current Balance</h4>
-  <h1>${balance}</h1>
+  <h1>${numberWithCommas(balance)}</h1>
     </div>
   );
 }

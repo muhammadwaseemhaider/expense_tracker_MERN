@@ -1,10 +1,16 @@
-import React , {useContext} from 'react';
+import React , {useContext, useEffect} from 'react';
 import {TransactionContext} from '../TransactionState';
-import { Transaction } from './Transaction'
+import { Transaction } from './Transaction';
 
 export const TransactionHistory = () => {
 
-  const { transactions } = useContext(TransactionContext);
+  const { transactions, getTransactions } = useContext(TransactionContext);
+
+  useEffect(()=> {
+    getTransactions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
+
 
   return (
     <div>
